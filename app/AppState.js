@@ -4,13 +4,28 @@ import { createObservableProxy } from './utils/ObservableProxy.js'
 
 class ObservableAppState extends EventEmitter {
 
-  uniqueNotes = [
-    new UniqueNote({
-      title: '',
-      body: ''
+  //   /**
+  //   * @type {UniqueNote[]}
+  // */
 
-    })
+  uniqueNotes = [
+    // new UniqueNote({
+    //   title: 'Horse',
+    //   body: 'Horses in the sunlight'
+
+    // }),
+    // new UniqueNote({
+    //   title: 'Horses',
+    //   body: 'Horses in the moonlight'
+
+    // }),
   ]
+
+  //   /**
+  //   #@type {UniqueNote | null}
+  // */
+
+  activeUniqueNote = null
 
 }
 

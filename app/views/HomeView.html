@@ -1,32 +1,51 @@
-<div class="row justify-content-center">
-    <div class="col-4">
-        <section id="router-view">
-            <!-- primary viewport -->
-        </section>
-        <p class="fs-3">Test Text</p>
+<div class="container">
 
-    </div>
-    <div class="col-6">
 
-        <div class="form-group fs-3" onsubmit="app.NotesController.createNote()">
+    <div class="row justify-content-center">
 
-            <textarea class="form-control mb-3" required minlength="3" maxlength="15" placeholder="Title"></textarea>
+        <div class="col-8">
 
-            <textarea class="form-control" rows="17" placeholder="Inscribe notes here"></textarea>
+            <form onsubmit="app.NotesController.createNote()">
 
-            <button type="submit">save</button>
+                <div class="form-group">
 
-            <button type="reset">delete</button>
+                    <label for="title">Title</label>
+                    <textarea class="form-control" name="title" id="title"></textarea>
+                </div>
+
+
+                <div class="form-group mb-3">
+                    <label for="body">Body</label>
+
+                    <textarea class="form-control" name="body" id="body" rows="24"></textarea>
+
+
+                </div>
+                <div class="text-end">
+
+                    <button class="btn btn-dark" type="submit">save</button>
+
+                </div>
+                <!-- <button type="reset">delete</button> -->
+
+            </form>
 
         </div>
+    </div>
+
+    <div id="uniqueNoteDetails" class="row">
+
+    </div>
+
+
+</div>
+
+<div class="offcanvas offcanvas-bottom" tabindex="-1" id="uniqueNotesOffcanvas" aria-labelledby="offcanvasBottomLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasBottomLabel">Notes</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div id="uniqueNotesList" class="offcanvas-body small">
 
     </div>
 </div>
-
-<!-- <p onclick="app.NotesController.setActiveNote('${this.id}')" class="fs-2 selectable px-5 d-flex justify-content-between"
-    role="button" data-bs-dismiss="offcanvas">
-
-    <b>${this.title}</b>
-
-    <span>${this.LastAccessedDate}</span>
-</p> -->
