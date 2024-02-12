@@ -1,0 +1,32 @@
+<div class="row justify-content-center">
+    <div class="col-4">
+        <section id="router-view">
+            <!-- primary viewport -->
+        </section>
+        <p class="fs-3">Test Text</p>
+
+    </div>
+    <div class="col-6">
+
+        <div class="form-group fs-3" onsubmit="app.NotesController.createNote()">
+
+            <textarea class="form-control mb-3" required minlength="3" maxlength="15" placeholder="Title"></textarea>
+
+            <textarea class="form-control" rows="17" placeholder="Inscribe notes here"></textarea>
+
+            <button type="submit">save</button>
+
+            <button type="reset">delete</button>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- <p onclick="app.NotesController.setActiveNote('${this.id}')" class="fs-2 selectable px-5 d-flex justify-content-between"
+    role="button" data-bs-dismiss="offcanvas">
+
+    <b>${this.title}</b>
+
+    <span>${this.LastAccessedDate}</span>
+</p> -->
