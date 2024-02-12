@@ -32,9 +32,11 @@ export class UniqueNote {
 
         <div class="p-3">
             
-            <p>${this.title} <span>${this.LastAccessedDate} ${this.LastAccessedTime}</span></p>
+            <p style="color:${this.color}">${this.title} <span>${this.LastAccessedDate} ${this.LastAccessedTime}</span></p>
 
             <textarea id="uniqueNoteTextArea">${this.body}</textarea>
+
+            
     
         </div>
         <div>
