@@ -15,11 +15,13 @@ class NotesService {
   constructor() {
     _loadUniqueNotes()
   }
+
   setActiveUniqueNote(uniqueNoteId) {
     const foundNote = AppState.uniqueNotes.find(uniqueNote => uniqueNote.id == uniqueNoteId)
 
     AppState.activeUniqueNote = foundNote
   }
+
   updateUniqueNote(updatedUniqueNoteBody) {
     const activeUniqueNote = AppState.activeUniqueNote
     activeUniqueNote.body = updatedUniqueNoteBody
@@ -27,14 +29,15 @@ class NotesService {
     _saveUniqueNotes()
     AppState.emit('activeUniqueNote')
   }
+
   createUniqueNote(uniqueNoteFormData) {
     const newUniqueNote = new UniqueNote(uniqueNoteFormData)
     AppState.uniqueNotes.push(newUniqueNote)
     _saveUniqueNotes()
   }
-  removeNote(uniqueNoteId) {
 
-    const uniqueNotesIndex = AppState.uniqueNotes.find(uniqueNote => uniqueNote.id == uniqueNoteId)
+  removeNote(uniqueNoteId) {
+    const uniqueNotesIndex = AppState.uniqueNotes.findIndex(uniqueNote => uniqueNote.id == uniqueNoteId)
     console.log('found index', uniqueNotesIndex);
 
 
