@@ -10,7 +10,7 @@ export class UniqueNote {
         this.body = data.body || ''
         this.lastAccessed = data.lastAccessed ? new Date(data.lastAccessed) : new Date()
         // FIXME add the createdAt property 
-
+        this.listedAt = data.listedAt == undefined ? new Date() : new Date(data.listedAt)
     }
 
     get ListHTMLTemplate() {
@@ -20,7 +20,7 @@ export class UniqueNote {
         <b style="color: ${this.color}">${this.title}</b>
         
         
-        <span>${this.LastAccessedDate} ${this.LastAccessedTime}</span>
+        <span>${this.listedAt} ${this.LastAccessedDate} ${this.LastAccessedTime}</span>
         </p>
         `
     }
@@ -32,7 +32,7 @@ export class UniqueNote {
 
         <div class="p-3">
             
-            <p style="color:${this.color}">${this.title} <span>${this.LastAccessedDate} ${this.LastAccessedTime}</span></p>
+            <p style="color:${this.color}">${this.title} <span>${this.listedAt} ${this.LastAccessedDate} ${this.LastAccessedTime}</span></p>
 
             <textarea id="uniqueNoteTextArea">${this.body}</textarea>
 
